@@ -1,49 +1,69 @@
 
 $(document).ready(function() {
-    console.log('jquery is ready');
+    // Always check if we are on the tracks.html and have any title param
+    checkCurrentPage(); 
 
-    $('.track-card').on('click', function() {
+    $('.track-card').click(function() {
         let trackTitle = $(this).attr('data-track-title');
 
         // Send user to specific track landing page here
         console.log('View track: ' + trackTitle);
 
-        window.location = 'tracks.html?title=' + trackTitle;
+        window.location = 'track.html?title=' + trackTitle;
     });
-
-    // Always check if we are on the tracks.html and have any title param
-
-    checkCurrentPage();
 });
 
 // https://stackoverflow.com/questions/18673860/defining-a-html-template-to-append-using-jquery/39065147
 function checkCurrentPage() {
     if (window.location.pathname.includes('index.html')) {
-        console.log(discography);
-
-        for (key in discography) {
-            let trackData = discography[key];
-            let template = `
-                <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
-                    <picture>
-                        <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
-                    </picture>
-
-                    <div class="track-info">
-                        <div class="track-title">
-                            <span class="font-weight-normal">${trackData.title}</span>
-                        </div>
-                        <div class="track-year">
-                            <p class="font-weight-light">${trackData.year}</p>
-                        </div>
-                    </div>
-                </div>`;
-
-            $(template).appendTo('.tracks');
-        }
+        renderTracklisting();
+    } else if (window.location.pathname.includes('track.html')) {
+        let searchParams = new URLSearchParams(window.location.search)
+        let trackTitle = searchParams.get('title');
+        
+        renderSpecificTrack(trackTitle);
     }
 }
 
+function renderTracklisting() {
+    for (key in discography) {
+        let trackData = discography[key];
+        let template = `
+            <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
+                <picture>
+                    <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
+                </picture>
+
+                <div class="track-info">
+                    <div class="track-title">
+                        <span class="font-weight-normal">${trackData.title}</span>
+                    </div>
+                    <div class="track-year">
+                        <p class="font-weight-light">${trackData.year}</p>
+                    </div>
+                </div>
+            </div>`;
+
+        $(template).appendTo('.tracks');
+    }
+}
+
+function renderSpecificTrack(trackTitle) {
+    let notFound = true;
+
+    for (key in discography) {
+        if (discography[key].url_title === trackTitle) {
+            console.log(discography[key]);
+            notFound = false;
+        }
+    }
+
+    if (notFound) {
+        alert('404');
+    }
+}
+
+// To avoid CORS issues, just set the JSON object here
 let discography = [
     {
         "title": "I Should Let You Go (feat. Nori)",

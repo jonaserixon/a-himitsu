@@ -53,8 +53,26 @@ function renderSpecificTrack(trackTitle) {
 
     for (key in discography) {
         if (discography[key].url_title === trackTitle) {
-            console.log(discography[key]);
+            let trackData = discography[key];
+
+            // let template = `
+            //     <div class="col-md-4">
+            //         <picture>
+            //             <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
+            //         </picture>
+            //     </div>
+
+            //     <div class="col-md-2">
+            //         ${trackData.title}
+            //     </div>`;
+
+            // $(template).appendTo('#currentTrack');
+
+            // console.log(discography[key]);
+            // console.log(template);
+
             notFound = false;
+            break;
         }
     }
 

@@ -57,20 +57,22 @@ function renderSpecificTrack(trackTitle) {
             renderSpecificTrackImage(trackData.image);
             renderSpecificTrackInfo(trackData);
             renderSocials();
-            renderOtherSongs();
+            renderOtherSongs(trackTitle);
 
             const stores = trackData.stores;
 
             for (key in stores) {
                 const store = stores[key];
 
-                const template = `
-                    <div class="store-button border rounded col-md-12" data-store-url="${store.url}">
-                        ${store.name}
-                        <i class="fas fa-play" style="float: right;"></i>
-                    </div>`;
+                if (store.url.length > 0) {
+                    const template = `
+                        <div class="store-button border rounded col-md-12" data-store-url="${store.url}">
+                            ${store.name}
+                            <i class="fas fa-play" style="float: right;"></i>
+                        </div>`;
 
-                $(template).appendTo('#storeButtons');
+                    $(template).appendTo('#storeButtons');
+                }
             }
 
             notFound = false;
@@ -120,8 +122,7 @@ function renderSpecificTrackInfo(trackData) {
     $(html).appendTo('#trackInfo');
 }
 
-function renderOtherSongs() {
-    // Randomly pick an handful of other songs from the discography and diplay at bottom
+function renderOtherSongs(trackTitle) {
     const numTracks = 3;
     const otherSongs = [];
 
@@ -130,12 +131,12 @@ function renderOtherSongs() {
     while (otherSongs.length < numTracks) {
         const trackIndex = Math.floor(Math.random() * (discography.length - 0)) + 0;
 
-        if (!otherSongs.includes(trackIndex)) {
+        if (!otherSongs.includes(trackIndex) && discography[trackIndex].url_title !== trackTitle) {
             otherSongs.push(trackIndex);
 
             const trackData = discography[trackIndex];
 
-            const template = `
+            const html = `
                 <div class="track-card col-lg-4" data-track-title="${trackData.url_title}">
                     <picture>
                         <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
@@ -151,11 +152,9 @@ function renderOtherSongs() {
                     </div>
                 </div>`;
     
-            $(template).appendTo('.tracks');
+            $(html).appendTo('.tracks');
         }
     }
-
-    console.log(otherSongs);
 }
 
 function renderSocials() {
@@ -163,30 +162,30 @@ function renderSocials() {
         <div class="col-xs-2" style="margin: 10px;"></div>
         <div class="col-xs-2" style="margin: 10px;"></div>
 
-        <div class="col-xs-2" style="margin: 10px;">
+        <a href="https://www.facebook.com/ahimitsu" target="_blank" class="col-xs-2" style="margin: 10px;">
             <img 
                 height="30px"
                 src="./icons/facebook.png"
             />
         </div>
-        <div class="col-xs-2" style="margin: 10px;">
+        <a href="https://twitter.com/ahimitsu1" target="_blank" class="col-xs-2" style="margin: 10px;">
             <img 
                 height="30px"
                 src="./icons/twitter.png"
             />
-        </div>
-        <div class="col-xs-2" style="margin: 10px;">
+        </a>
+        <a href="https://www.instagram.com/a_himitsu/" target="_blank" class="col-xs-2" style="margin: 10px;">
             <img 
                 height="30px"
                 src="./icons/instagram.png"
             />
-        </div>
-        <div class="col-xs-2" style="margin: 10px;">
+        </a>
+        <a href="https://www.youtube.com/channel/UCgFwu-j5-xNJml2FtTrrB3A" target="_blank" class="col-xs-2" style="margin: 10px;">
             <img 
                 height="30px"
                 src="./icons/youtube.png"
             />
-        </div>`;
+        </a>`;
 
     $(html).appendTo('#socialMedia');
 }
@@ -208,54 +207,40 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/6TmNyNa1365ROnIiihzDg2?si=2H7fx5PmS4KyjqvUrc4K-Q"
             },
             {
                 "name": "Apple Music",
-                "url": "",
-                "icon": ""
+                "url": "https://music.apple.com/us/album/this-is-all-in-my-head-single/1552033003"
             },
             {
                 "name": "iTunes",
-                "url": "",
-                "icon": ""
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/album/this-is-all-in-my-head"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/i-should-let-you-go-feat-nori"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=Xzq3z9tFkbk"
             },
             {
                 "name": "Amazon",
-                "url": "",
-                "icon": ""
+                "url": "https://www.amazon.com/Should-Let-You-feat-Nori/dp/B08VWTY45S"
             },
             {
                 "name": "Deezer",
-                "url": "",
-                "icon": ""
+                "url": "https://www.deezer.com/en/album/205211162"
             },
             {
                 "name": "Tidal",
-                "url": "",
-                "icon": ""
-            },
-            {
-                "name": "Amazon",
-                "url": "",
-                "icon": ""
-            },
+                "url": "https://tidal.com/browse/track/172405612"
+            }
         ],
         "lyrics": "\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{65}\\u{77}\\u{20}\\u{49}\\u{2019}\\u{64}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{64}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{77}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{66}\\u{65}\\u{65}\\u{6c}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{6f}\\u{6e}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{67}\\u{6f}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2019}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{62}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{69}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{65}\\u{77}\\u{20}\\u{49}\\u{2019}\\u{64}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{64}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{77}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{66}\\u{65}\\u{65}\\u{6c}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{6f}\\u{6e}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{67}\\u{6f}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2019}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{62}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{69}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}",
         "lyricist": "Nori"
@@ -275,28 +260,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/2NNLBTH7zU4TrRXtjUPpZg?si=adwooROESzGOKZGBcfy1aw"
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/this-is-all-in-my-head-single/1552033003"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/album/this-is-all-in-my-head"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/dont-cry-feat-nori"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=KCwA65MuVko"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/dp/B08VWGLHSZ"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/en/album/205211162"
+            },
+            {
+                "name": "Tidal",
+                "url": "https://tidal.com/browse/track/172405613"
             }
         ],
         "lyrics": "\\u{54}\\u{68}\\u{69}\\u{73}\\u{20}\\u{69}\\u{73}\\u{20}\\u{74}\\u{68}\\u{65}\\u{20}\\u{66}\\u{69}\\u{72}\\u{73}\\u{74}\\u{20}\\u{74}\\u{69}\\u{6d}\\u{65}\\u{20}\\u{49}\\u{2019}\\u{6d}\\u{20}\\u{77}\\u{61}\\u{6c}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a}\\u{46}\\u{72}\\u{6f}\\u{6d}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{69}\\u{73}\\u{20}\\u{74}\\u{68}\\u{65}\\u{20}\\u{74}\\u{68}\\u{69}\\u{72}\\u{64}\\u{20}\\u{74}\\u{69}\\u{6d}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{62}\\u{72}\\u{6f}\\u{6b}\\u{65}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6e}\\u{65}\\u{77}\\u{a}\\u{46}\\u{72}\\u{6f}\\u{6d}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{a} \\n \\u{44}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{63}\\u{72}\\u{79}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{79}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{69}\\u{73}\\u{20}\\u{61}\\u{6c}\\u{6c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6d}\\u{79}\\u{20}\\u{68}\\u{65}\\u{61}\\u{64}\\u{a}\\u{44}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{63}\\u{72}\\u{79}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{79}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{77}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{75}\\u{70}\\u{20}\\u{69}\\u{6e}\\u{73}\\u{74}\\u{65}\\u{61}\\u{64}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{77}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{75}\\u{70}\\u{20}\\u{69}\\u{6e}\\u{73}\\u{74}\\u{65}\\u{61}\\u{64}\\u{a}\\u{49}\\u{6e}\\u{73}\\u{74}\\u{65}\\u{61}\\u{64}\\u{20}\\u{28}\\u{78}\\u{33}\\u{29}\\u{a} \\n \\u{44}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{63}\\u{72}\\u{79}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{79}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{77}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{75}\\u{70}\\u{20}\\u{69}\\u{6e}\\u{73}\\u{74}\\u{65}\\u{61}\\u{64}\\u{a}\\u{41}\\u{6e}\\u{64}\\u{20}\\u{64}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{63}\\u{72}\\u{79}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{79}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{69}\\u{73}\\u{20}\\u{61}\\u{6c}\\u{6c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6d}\\u{79}\\u{20}\\u{68}\\u{65}\\u{61}\\u{64}\\u{a}\\u{44}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{63}\\u{72}\\u{79}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{79}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{77}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{75}\\u{70}\\u{20}\\u{69}\\u{6e}\\u{73}\\u{74}\\u{65}\\u{61}\\u{64}\\u{a}",
@@ -317,28 +313,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/7h1vBmAZW8N5oZB1DwkJ2n?si=Vp1jQpllQAGEnS4HvQkRPA"
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/this-is-all-in-my-head-single/1552033003"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/album/this-is-all-in-my-head"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/fragile"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=CHJJRdrFw5s"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/dp/B08VWNDKCM"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/en/album/205211162"
+            },
+            {
+                "name": "Tidal",
+                "url": "https://tidal.com/browse/track/172405614"
             }
         ],
         "lyrics": "",

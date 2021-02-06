@@ -8,72 +8,43 @@
         <title>A Himitsu Official</title>
     </head>
 
-    <body>
+    <body style="background-color: #1f242a;">
         <!-- Navigation -->
-        <a class="navbar-brand" href="./index.html">A Himitsu</a>
+        <a class="btn btn-default" href="./index.html">A Himitsu</a>
 
-        <div class="container" style="max-width: 800px; text-align: center;">
-            <section class="row">
-                <div class="col-lg-12 text-center">
-                    <h1 class="mt-5">Two Places</h1>
-                    <p class="lead">A Himitsu</p>
-                </div>
-            </section>
+        <div class="container" style="max-width: 800px;">
+            <section id="trackHeader" class="row"></section>
             
             <hr/>
 
             <section id="currentTrack" class="row">
-                <div class="col-md-6">
-                    <picture>
-                        <img 
-                            height="300px"
-                            class="rounded" 
-                            src="https://i1.sndcdn.com/artworks-000242466576-6kqr68-t500x500.jpg"
-                        />
-                    </picture>
-                </div>
+                <div class="track-details col-md-6">
+                    <div id="trackInfo"></div>
 
-                <div class="col-md-6">
-                    <div>
-                        <p>Two Places - Single</p>
-                    </div>
+                    <hr/>
 
-                    <div>
-                        <p>Written in 2015</p>
-                    </div>
-
-                    <div>
-                        <p>Released in 2016</p>
-                    </div>
-
-                    <div>
-                        Written, produced and mastered by A Himitsu
+                    <div id="socialMedia" class="row">
+                        
                     </div>
                 </div>
             </section>
 
-            <section class="row">
-                <div class="store-button border rounded col-md-12">
-                    Spotify
-                    <i class="fas fa-play" style="float: right;"></i>
-                </div>
-                
-                <div class="store-button border rounded col-md-12">
-                    Apple Music
-                    <i class="fas fa-play" style="float: right;"></i>
-                </div>
+            <hr/>
 
-                <div class="store-button border rounded col-md-12">
-                    SoundCloud
-                    <i class="fas fa-play" style="float: right;"></i>
-                </div>
+            <section id="storeButtons" class="row"></section>
 
-                <div class="store-button border rounded col-md-12">
-                    YouTube
-                    <i class="fas fa-play" style="float: right;"></i>
-                </div>
-            </section>
+            <hr/>
+
+            <div class="other-songs">
+                <section class="tracks row"></section>
+            </div>
         </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         
         <footer class="py-4 bg-dark text-white-50 fixed-bottom">
             <div class="container text-center">

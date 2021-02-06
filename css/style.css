@@ -2,9 +2,32 @@
     cursor: pointer;
 }
 
+.track-card picture {
+    cursor: pointer;
+}
+
 .store-button {
     /* text-align: center; */
+    color: azure;
     cursor: pointer;
-    margin: 20px;
+    margin: 15px;
     padding: 15px;
+    background-color: #373b41;
 }
+
+.store-button:hover {
+    /* background-color: #373b41; */
+    opacity: 0.6;
+}
+
+.track-details {
+    color: azure;
+}
+
+.other-songs {
+    color: azure;
+}
+
+/* .lp {
+    background-color:azure;
+} */

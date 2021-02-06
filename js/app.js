@@ -3,12 +3,8 @@ $(document).ready(function() {
     // Always check if we are on the tracks.html and have any title param
     checkCurrentPage(); 
 
-    $('.track-card').click(function() {
-        let trackTitle = $(this).attr('data-track-title');
-
-        // Send user to specific track landing page here
-        console.log('View track: ' + trackTitle);
-
+    $('.track-card picture').click(function() {
+        let trackTitle = $(this).parent().attr('data-track-title');
         window.location = 'track.html?title=' + trackTitle;
     });
 });
@@ -53,23 +49,29 @@ function renderSpecificTrack(trackTitle) {
 
     for (key in discography) {
         if (discography[key].url_title === trackTitle) {
-            let trackData = discography[key];
+            const trackData = discography[key];
 
-            // let template = `
-            //     <div class="col-md-4">
-            //         <picture>
-            //             <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
-            //         </picture>
-            //     </div>
+            document.title = 'A Himitsu - ' + trackData.title;
 
-            //     <div class="col-md-2">
-            //         ${trackData.title}
-            //     </div>`;
+            renderSpecificTrackHeader(trackData);
+            renderSpecificTrackImage(trackData.image);
+            renderSpecificTrackInfo(trackData);
+            renderSocials();
+            renderOtherSongs();
 
-            // $(template).appendTo('#currentTrack');
+            const stores = trackData.stores;
 
-            // console.log(discography[key]);
-            // console.log(template);
+            for (key in stores) {
+                const store = stores[key];
+
+                const template = `
+                    <div class="store-button border rounded col-md-12" data-store-url="${store.url}">
+                        ${store.name}
+                        <i class="fas fa-play" style="float: right;"></i>
+                    </div>`;
+
+                $(template).appendTo('#storeButtons');
+            }
 
             notFound = false;
             break;
@@ -79,6 +81,114 @@ function renderSpecificTrack(trackTitle) {
     if (notFound) {
         alert('404');
     }
+}
+
+function renderSpecificTrackHeader(trackData) {
+    let html = `
+            <div class="col-lg-12 text-center track-details">
+                <h1 class="mt-5">${trackData.title}</h1>
+                <p class="lead">A Himitsu</p>
+            </div>`;
+
+    $(html).appendTo('#trackHeader');
+}
+
+function renderSpecificTrackImage(imageUrl) {
+    let html = `
+        <div class="specificTrackImage col-md-6 text-center">
+            <picture class="">
+                <img 
+                    height="300px"
+                    class="rounded" 
+                    src="${imageUrl}"
+                />
+            </picture>
+        </div>`;
+
+    $(html).prependTo('#currentTrack');
+}
+
+function renderSpecificTrackInfo(trackData) {
+    let html = `
+        <div>
+            <p class="lead">${trackData.title} - ${trackData.release_type.toUpperCase()} (${trackData.year})</p>
+        </div>
+        <div>
+            <p><small>Written, produced and mastered by A Himitsu</small></p>
+        </div>`;
+
+    $(html).appendTo('#trackInfo');
+}
+
+function renderOtherSongs() {
+    // Randomly pick an handful of other songs from the discography and diplay at bottom
+    const numTracks = 3;
+    const otherSongs = [];
+
+    $(`<h3>More music from A Himitsu</h3><br/>`).prependTo('.other-songs');
+
+    while (otherSongs.length < numTracks) {
+        const trackIndex = Math.floor(Math.random() * (discography.length - 0)) + 0;
+
+        if (!otherSongs.includes(trackIndex)) {
+            otherSongs.push(trackIndex);
+
+            const trackData = discography[trackIndex];
+
+            const template = `
+                <div class="track-card col-lg-4" data-track-title="${trackData.url_title}">
+                    <picture>
+                        <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
+                    </picture>
+    
+                    <div class="track-info">
+                        <div class="track-title">
+                            <span class="font-weight-normal">${trackData.title}</span>
+                        </div>
+                        <div class="track-year">
+                            <p class="font-weight-light">${trackData.year}</p>
+                        </div>
+                    </div>
+                </div>`;
+    
+            $(template).appendTo('.tracks');
+        }
+    }
+
+    console.log(otherSongs);
+}
+
+function renderSocials() {
+    let html = `
+        <div class="col-xs-2" style="margin: 10px;"></div>
+        <div class="col-xs-2" style="margin: 10px;"></div>
+
+        <div class="col-xs-2" style="margin: 10px;">
+            <img 
+                height="30px"
+                src="./icons/facebook.png"
+            />
+        </div>
+        <div class="col-xs-2" style="margin: 10px;">
+            <img 
+                height="30px"
+                src="./icons/twitter.png"
+            />
+        </div>
+        <div class="col-xs-2" style="margin: 10px;">
+            <img 
+                height="30px"
+                src="./icons/instagram.png"
+            />
+        </div>
+        <div class="col-xs-2" style="margin: 10px;">
+            <img 
+                height="30px"
+                src="./icons/youtube.png"
+            />
+        </div>`;
+
+    $(html).appendTo('#socialMedia');
 }
 
 // To avoid CORS issues, just set the JSON object here
@@ -102,7 +212,12 @@ let discography = [
                 "icon": ""
             },
             {
-                "name": "Apple Music / iTunes",
+                "name": "Apple Music",
+                "url": "",
+                "icon": ""
+            },
+            {
+                "name": "iTunes",
                 "url": "",
                 "icon": ""
             },
@@ -120,7 +235,27 @@ let discography = [
                 "name": "YouTube",
                 "url": "",
                 "icon": ""
-            }
+            },
+            {
+                "name": "Amazon",
+                "url": "",
+                "icon": ""
+            },
+            {
+                "name": "Deezer",
+                "url": "",
+                "icon": ""
+            },
+            {
+                "name": "Tidal",
+                "url": "",
+                "icon": ""
+            },
+            {
+                "name": "Amazon",
+                "url": "",
+                "icon": ""
+            },
         ],
         "lyrics": "\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{65}\\u{77}\\u{20}\\u{49}\\u{2019}\\u{64}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{64}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{77}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{66}\\u{65}\\u{65}\\u{6c}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{6f}\\u{6e}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{67}\\u{6f}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2019}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{62}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{69}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{65}\\u{77}\\u{20}\\u{49}\\u{2019}\\u{64}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{64}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{77}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{66}\\u{65}\\u{65}\\u{6c}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6c}\\u{65}\\u{61}\\u{76}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6c}\\u{6f}\\u{6e}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a} \\n \\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{67}\\u{6f}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2019}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{49}\\u{20}\\u{73}\\u{68}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{62}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{49}\\u{20}\\u{6b}\\u{65}\\u{65}\\u{70}\\u{20}\\u{6f}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{54}\\u{68}\\u{69}\\u{6e}\\u{6b}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6f}\\u{66}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{6d}\\u{65}\\u{a}\\u{42}\\u{75}\\u{74}\\u{20}\\u{74}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{69}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{74}\\u{68}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{65}\\u{6c}\\u{6c}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{6d}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{a}",
         "lyricist": "Nori"
@@ -339,6 +474,7 @@ let discography = [
         "title": "In Love (feat. Nori)",
         "url_title": "in-love",
         "image": "https://i1.sndcdn.com/artworks-000190303387-zya2ng-t500x500.jpg",
+        "release_type": "single",
         "extra_info": "Featuring Nori on vocals",
         "year": "2016",
         "date": "October 16",

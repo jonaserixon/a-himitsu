@@ -7,6 +7,11 @@ $(document).ready(function() {
         let trackTitle = $(this).parent().attr('data-track-title');
         window.location = 'track.html?title=' + trackTitle;
     });
+
+    $('.store-button').click(function() {
+        let storeUrl = $(this).attr('data-store-url');
+        window.location = storeUrl;
+    });
 });
 
 // https://stackoverflow.com/questions/18673860/defining-a-html-template-to-append-using-jquery/39065147
@@ -51,7 +56,7 @@ function renderSpecificTrack(trackTitle) {
         if (discography[key].url_title === trackTitle) {
             const trackData = discography[key];
 
-            document.title = 'A Himitsu - ' + trackData.title;
+            document.title = 'A Himitsu - ' + trackData.title + ' (' + trackData.year + ')';
 
             renderSpecificTrackHeader(trackData);
             renderSpecificTrackImage(trackData.image);
@@ -366,28 +371,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/1d7I0glyl5A5l3mQjvEgEq?si=ragHLauHQz2LJjN-9IiY7Q"
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/two-places-single/1552033085"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/track/two-places"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=lK6QXbYKzhA"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/Two-Places/dp/B08VW92B78"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/en/album/205211052"
+            },
+            {
+                "name": "Tidal",
+                "url": "https://tidal.com/browse/track/172405624"
             }
         ],
         "lyrics": "",
@@ -408,28 +424,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/3Wl4RPEJZgGR46NGW77cLQ?si=YkkY8PQsRYKucIv07XmhPw"
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/cosmic-storm-single/1552031555"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/track/cosmic-storm"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/cosmic-storm"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=C8fkSFIf3hY"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/Cosmic-Storm/dp/B08VRXRP5H"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/en/album/204872352"
+            },
+            {
+                "name": "Tidal",
+                "url": "https://tidal.com/browse/album/172239691"
             }
         ],
         "lyrics": "",
@@ -450,28 +477,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": "https://open.spotify.com/track/5JBGN8R0mRAzmvDKFNkVmY?si=9J7ArssTSmS5fTnxohNciQ"
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/realms-single/1207587842"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": "https://ahimitsu.bandcamp.com/track/realms"
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/hinkik-a-himitsu-realms"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": "https://www.youtube.com/watch?v=Nv5YxKqQ65A"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/Realms-Hinkik-Himitsu/dp/B06X1DL42T"
+            },
+            {
+                "name": "Deezer",
+                "url": "https://www.deezer.com/en/album/15409439"
+            },
+            {
+                "name": "Tidal",
+                "url": "https://tidal.com/browse/album/70644267"
             }
         ],
         "lyrics": "",
@@ -491,28 +529,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "\\u{49}\\u{20}\\u{63}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{6c}\\u{69}\\u{6b}\\u{65}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{2c}\\u{a}\\u{46}\\u{6f}\\u{72}\\u{65}\\u{76}\\u{65}\\u{72}\\u{20}\\u{66}\\u{6f}\\u{6c}\\u{6c}\\u{6f}\\u{77}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{a}\\u{4a}\\u{75}\\u{73}\\u{74}\\u{20}\\u{64}\\u{6f}\\u{6e}\\u{2019}\\u{74}\\u{20}\\u{67}\\u{65}\\u{74}\\u{20}\\u{74}\\u{6f}\\u{6f}\\u{20}\\u{66}\\u{61}\\u{72}\\u{a}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{49}\\u{27}\\u{6c}\\u{6c}\\u{20}\\u{62}\\u{65}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{20}\\u{77}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{61}\\u{72}\\u{65}\\u{a} \\n \\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{61}\\u{20}\\u{64}\\u{72}\\u{65}\\u{61}\\u{6d}\\u{20}\\u{74}\\u{68}\\u{61}\\u{74}\\u{20}\\u{49}\\u{20}\\u{63}\\u{6f}\\u{75}\\u{6c}\\u{64}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{61}\\u{6c}\\u{6c}\\u{79}\\u{20}\\u{73}\\u{65}\\u{65}\\u{a}\\u{49}\\u{20}\\u{6a}\\u{75}\\u{73}\\u{74}\\u{20}\\u{77}\\u{61}\\u{6e}\\u{74}\\u{20}\\u{75}\\u{73}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{62}\\u{65}\\u{2c}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{62}\\u{65}\\u{a}\\u{49}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{64}\\u{72}\\u{65}\\u{61}\\u{6d}\\u{a}\\u{49}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{64}\\u{72}\\u{65}\\u{61}\\u{6d}\\u{a} \\n \\u{4c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{a}\\u{4c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{a}\\u{49}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{64}\\u{72}\\u{65}\\u{61}\\u{6d}\\u{a}\\u{49}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{64}\\u{72}\\u{65}\\u{61}\\u{6d}\\u{a} \\n \\u{4c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{6c}\\u{65}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{2c}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6c}\\u{6f}\\u{76}\\u{65}\\u{2e}\\u{2e}\\u{2e}",
@@ -533,28 +582,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "\\u{4c}\\u{6f}\\u{73}\\u{74}\\u{20}\\u{73}\\u{6f}\\u{75}\\u{6c}\\u{73}\\u{20}\\u{68}\\u{61}\\u{76}\\u{65}\\u{20}\\u{66}\\u{6f}\\u{75}\\u{6e}\\u{64}\\u{20}\\u{74}\\u{68}\\u{65}\\u{69}\\u{72}\\u{20}\\u{77}\\u{61}\\u{79}\\u{a}\\u{54}\\u{6f}\\u{20}\\u{70}\\u{6c}\\u{61}\\u{63}\\u{65}\\u{73}\\u{20}\\u{74}\\u{68}\\u{65}\\u{79}\\u{20}\\u{77}\\u{65}\\u{72}\\u{65}\\u{20}\\u{6d}\\u{65}\\u{61}\\u{6e}\\u{74}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{a}\\u{44}\\u{61}\\u{72}\\u{6b}\\u{20}\\u{74}\\u{68}\\u{6f}\\u{75}\\u{67}\\u{68}\\u{74}\\u{73}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{20}\\u{66}\\u{61}\\u{64}\\u{65}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{6c}\\u{6f}\\u{73}\\u{74}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{20}\\u{6e}\\u{6f}\\u{77}\\u{2c}\\u{20}\\u{62}\\u{75}\\u{74}\\u{20}\\u{69}\\u{74}\\u{20}\\u{77}\\u{6f}\\u{6e}\\u{27}\\u{74}\\u{20}\\u{62}\\u{65}\\u{20}\\u{74}\\u{68}\\u{65}\\u{20}\\u{73}\\u{61}\\u{6d}\\u{65}\\u{a} \\n \\u{49}\\u{74}\\u{2019}\\u{73}\\u{20}\\u{6f}\\u{6e}\\u{6c}\\u{79}\\u{20}\\u{6a}\\u{75}\\u{73}\\u{74}\\u{20}\\u{66}\\u{6f}\\u{72}\\u{20}\\u{6e}\\u{6f}\\u{77}\\u{a}\\u{57}\\u{65}\\u{27}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{69}\\u{74}\\u{20}\\u{74}\\u{68}\\u{72}\\u{6f}\\u{75}\\u{67}\\u{68}\\u{20}\\u{73}\\u{6f}\\u{6d}\\u{65}\\u{68}\\u{6f}\\u{77}\\u{a}\\u{49}\\u{74}\\u{2019}\\u{73}\\u{20}\\u{6e}\\u{6f}\\u{74}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{72}\\u{20}\\u{66}\\u{61}\\u{75}\\u{6c}\\u{74}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{20}\\u{77}\\u{6f}\\u{6e}\\u{27}\\u{74}\\u{20}\\u{62}\\u{65}\\u{20}\\u{6c}\\u{6f}\\u{73}\\u{74}\\u{20}\\u{66}\\u{6f}\\u{72}\\u{65}\\u{76}\\u{65}\\u{72}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{74}\\u{68}\\u{65}\\u{20}\\u{64}\\u{61}\\u{72}\\u{6b}\\u{a}\\u{57}\\u{65}\\u{27}\\u{6c}\\u{6c}\\u{20}\\u{6d}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{69}\\u{74}\\u{20}\\u{74}\\u{68}\\u{72}\\u{6f}\\u{75}\\u{67}\\u{68}\\u{20}\\u{74}\\u{6f}\\u{67}\\u{65}\\u{74}\\u{68}\\u{65}\\u{72}\\u{a} \\n \\u{59}\\u{6f}\\u{75}\\u{72}\\u{20}\\u{73}\\u{6f}\\u{75}\\u{6c}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{66}\\u{69}\\u{6e}\\u{64}\\u{20}\\u{69}\\u{74}\\u{73}\\u{20}\\u{77}\\u{61}\\u{79}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{6e}\\u{6f}\\u{74}\\u{20}\\u{61}\\u{6c}\\u{6f}\\u{6e}\\u{65}\\u{2c}\\u{20}\\u{49}\\u{27}\\u{6d}\\u{20}\\u{68}\\u{65}\\u{72}\\u{65}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{73}\\u{74}\\u{61}\\u{79}\\u{a}\\u{4f}\\u{68}\\u{2c}\\u{20}\\u{49}\\u{20}\\u{77}\\u{69}\\u{73}\\u{68}\\u{20}\\u{49}\\u{20}\\u{68}\\u{61}\\u{64}\\u{20}\\u{74}\\u{68}\\u{65}\\u{20}\\u{63}\\u{68}\\u{61}\\u{6e}\\u{63}\\u{65}\\u{2c}\\u{a}\\u{54}\\u{6f}\\u{20}\\u{6d}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{69}\\u{74}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{20}\\u{61}\\u{6e}\\u{64}\\u{20}\\u{73}\\u{61}\\u{76}\\u{65}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{20}\\u{66}\\u{72}\\u{6f}\\u{6d}\\u{20}\\u{69}\\u{74}\\u{20}\\u{61}\\u{6c}\\u{6c}\\u{a}",
@@ -575,28 +635,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -617,28 +688,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -659,28 +741,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -701,28 +794,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "\u{49}\u{20}\u{66}\u{65}\u{65}\u{6c}\u{20}\u{74}\u{68}\u{65}\u{20}\u{61}\u{69}\u{72}\u{20}\u{67}\u{65}\u{74}\u{74}\u{69}\u{6e}\u{67}\u{20}\u{63}\u{6f}\u{6c}\u{64}\u{65}\u{72}\u{a}\u{49}\u{20}\u{6b}\u{6e}\u{6f}\u{77}\u{20}\u{73}\u{6f}\u{6d}\u{65}\u{74}\u{68}\u{69}\u{6e}\u{67}\u{27}\u{73}\u{20}\u{6d}\u{69}\u{73}\u{73}\u{69}\u{6e}\u{67}\u{20}\u{68}\u{65}\u{72}\u{65}\u{a}\u{49}\u{20}\u{6e}\u{65}\u{65}\u{64}\u{20}\u{79}\u{6f}\u{75}\u{72}\u{20}\u{77}\u{61}\u{72}\u{6d}\u{74}\u{68}\u{20}\u{72}\u{69}\u{67}\u{68}\u{74}\u{20}\u{68}\u{65}\u{72}\u{65}\u{a}\u{49}\u{20}\u{6e}\u{65}\u{65}\u{64}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{74}\u{6f}\u{20}\u{6c}\u{69}\u{67}\u{68}\u{74}\u{20}\u{74}\u{68}\u{65}\u{20}\u{66}\u{69}\u{72}\u{65}\u{a} \n \u{43}\u{61}\u{6e}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{72}\u{65}\u{61}\u{63}\u{68}\u{20}\u{6d}\u{65}\u{20}\u{69}\u{6e}\u{20}\u{74}\u{69}\u{6d}\u{65}\u{3f}\u{a}\u{43}\u{61}\u{6e}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{66}\u{69}\u{6e}\u{64}\u{20}\u{6d}\u{65}\u{20}\u{69}\u{6e}\u{20}\u{74}\u{69}\u{6d}\u{65}\u{3f}\u{a}\u{49}\u{27}\u{6d}\u{20}\u{77}\u{61}\u{69}\u{74}\u{69}\u{6e}\u{67}\u{a}\u{49}\u{27}\u{6d}\u{20}\u{77}\u{61}\u{69}\u{74}\u{69}\u{6e}\u{67}\u{20}\u{6a}\u{75}\u{73}\u{74}\u{20}\u{6f}\u{6e}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{6e}\u{6f}\u{77}\u{a}\u{49}\u{27}\u{6d}\u{20}\u{77}\u{61}\u{69}\u{74}\u{69}\u{6e}\u{67}\u{20}\u{6a}\u{75}\u{73}\u{74}\u{20}\u{6f}\u{6e}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{6e}\u{6f}\u{77}\u{a} \n \u{41}\u{72}\u{65}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{67}\u{6f}\u{6e}\u{6e}\u{61}\u{20}\u{66}\u{69}\u{6e}\u{64}\u{20}\u{6d}\u{65}\u{3f}\u{a}\u{41}\u{72}\u{65}\u{20}\u{79}\u{6f}\u{75}\u{20}\u{67}\u{6f}\u{6e}\u{6e}\u{61}\u{20}\u{66}\u{69}\u{6e}\u{64}\u{20}\u{6d}\u{65}\u{3f}\u{a}\u{49}\u{20}\u{6e}\u{65}\u{65}\u{64}\u{20}\u{74}\u{6f}\u{20}\u{6b}\u{6e}\u{6f}\u{77}\u{20}\u{79}\u{6f}\u{75}\u{27}\u{64}\u{20}\u{62}\u{65}\u{20}\u{68}\u{65}\u{72}\u{65}\u{20}\u{69}\u{6e}\u{20}\u{74}\u{69}\u{6d}\u{65}\u{a}\u{49}\u{20}\u{6e}\u{65}\u{65}\u{64}\u{20}\u{74}\u{6f}\u{20}\u{6b}\u{6e}\u{6f}\u{77}\u{20}\u{79}\u{6f}\u{75}\u{27}\u{64}\u{20}\u{62}\u{65}\u{20}\u{68}\u{65}\u{72}\u{65}\u{20}\u{69}\u{6e}\u{20}\u{74}\u{69}\u{6d}\u{65}\u{2e}\u{2e}\u{2e}\u{a}",
@@ -743,28 +847,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -785,28 +900,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -827,28 +953,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "\\u{57}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{77}\\u{69}\\u{6c}\\u{6c}\\u{20}\\u{69}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{a}\\u{57}\\u{68}\\u{65}\\u{6e}\\u{20}\\u{69}\\u{74}\\u{20}\\u{69}\\u{73}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{a} \\n \\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{74}\\u{72}\\u{79}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{66}\\u{6f}\\u{72}\\u{67}\\u{65}\\u{74}\\u{a}\\u{59}\\u{6f}\\u{75}\\u{27}\\u{72}\\u{65}\\u{20}\\u{61}\\u{6c}\\u{77}\\u{61}\\u{79}\\u{73}\\u{20}\\u{77}\\u{61}\\u{6e}\\u{74}\\u{69}\\u{6e}\\u{67}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{70}\\u{72}\\u{65}\\u{74}\\u{65}\\u{6e}\\u{64}\\u{a}\\u{49}\\u{20}\\u{73}\\u{65}\\u{65}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{20}\\u{74}\\u{68}\\u{72}\\u{6f}\\u{75}\\u{67}\\u{68}\\u{20}\\u{79}\\u{6f}\\u{75}\\u{72}\\u{20}\\u{73}\\u{65}\\u{6c}\\u{66}\\u{69}\\u{73}\\u{68}\\u{20}\\u{77}\\u{61}\\u{79}\\u{73}\\u{a}\\u{61}\\u{20}\\u{74}\\u{72}\\u{75}\\u{74}\\u{68}\\u{20}\\u{74}\\u{68}\\u{61}\\u{74}\\u{20}\\u{69}\\u{20}\\u{64}\\u{6f}\\u{6e}\\u{27}\\u{74}\\u{20}\\u{77}\\u{61}\\u{6e}\\u{74}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{66}\\u{61}\\u{63}\\u{65}\\u{a} \\n \\u{54}\\u{68}\\u{69}\\u{73}\\u{20}\\u{77}\\u{61}\\u{73}\\u{20}\\u{6e}\\u{65}\\u{76}\\u{65}\\u{72}\\u{20}\\u{77}\\u{68}\\u{61}\\u{74}\\u{20}\\u{69}\\u{20}\\u{68}\\u{61}\\u{64}\\u{20}\\u{69}\\u{6e}\\u{20}\\u{6d}\\u{69}\\u{6e}\\u{64}\\u{a}\\u{49}\\u{20}\\u{6b}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{6e}\\u{6f}\\u{77}\\u{20}\\u{74}\\u{68}\\u{61}\\u{74}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{6a}\\u{75}\\u{73}\\u{74}\\u{20}\\u{69}\\u{73}\\u{6e}\\u{27}\\u{74}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{a} \\n \\u{57}\\u{68}\\u{79}\\u{20}\\u{66}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{74}\\u{68}\\u{61}\\u{74}\\u{20}\\u{69}\\u{74}\\u{27}\\u{73}\\u{20}\\u{73}\\u{6f}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{20}\\u{62}\\u{75}\\u{74}\\u{20}\\u{69}\\u{74}\\u{27}\\u{73}\\u{20}\\u{65}\\u{61}\\u{73}\\u{69}\\u{65}\\u{72}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{66}\\u{61}\\u{64}\\u{65}\\u{20}\\u{61}\\u{77}\\u{61}\\u{79}\\u{a}\\u{57}\\u{68}\\u{79}\\u{20}\\u{63}\\u{61}\\u{6e}\\u{27}\\u{74}\\u{20}\\u{69}\\u{20}\\u{64}\\u{6f}\\u{20}\\u{74}\\u{68}\\u{69}\\u{73}\\u{20}\\u{72}\\u{69}\\u{67}\\u{68}\\u{74}\\u{2c}\\u{20}\\u{69}\\u{74}\\u{27}\\u{73}\\u{20}\\u{65}\\u{61}\\u{73}\\u{69}\\u{65}\\u{72}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{66}\\u{61}\\u{6b}\\u{65}\\u{20}\\u{62}\\u{75}\\u{74}\\u{20}\\u{68}\\u{61}\\u{72}\\u{64}\\u{65}\\u{72}\\u{20}\\u{74}\\u{6f}\\u{20}\\u{66}\\u{6f}\\u{72}\\u{67}\\u{65}\\u{74}\\u{a}",
@@ -869,28 +1006,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -911,28 +1059,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -953,28 +1112,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -995,28 +1165,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -1037,28 +1218,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -1079,28 +1271,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",
@@ -1121,28 +1324,39 @@ let discography = [
         "stores": [
             {
                 "name": "Spotify",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
-                "name": "Apple Music / iTunes",
-                "url": "",
-                "icon": ""
+                "name": "Apple Music",
+                "url": ""
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/us/artist/a-himitsu/971791636"
             },
             {
                 "name": "Bandcamp",
-                "url": "",
-                "icon": ""
+                "url": ""
             },
             {
                 "name": "SoundCloud",
-                "url": "",
-                "icon": ""
+                "url": "https://soundcloud.com/a-himitsu/two-places"
             },
             {
                 "name": "YouTube",
-                "url": "",
-                "icon": ""
+                "url": ""
+            },
+            {
+                "name": "Amazon",
+                "url": ""
+            },
+            {
+                "name": "Deezer",
+                "url": ""
+            },
+            {
+                "name": "Tidal",
+                "url": ""
             }
         ],
         "lyrics": "",

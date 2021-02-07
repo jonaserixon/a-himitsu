@@ -2,17 +2,37 @@
     cursor: pointer;
 }
 
+.content-container {
+    background-color: #e4e8ee;
+    border-radius: 5px;
+    padding-top: 1.25em;
+}
+
 .track-card picture {
     cursor: pointer;
+}
+.track-card img {
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 
 .store-button {
     /* text-align: center; */
     color: azure;
     cursor: pointer;
-    margin: 15px;
+    margin: 10px;
     padding: 15px;
     background-color: #373b41;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color:azure;
+    text-decoration:none;
+    cursor:pointer;
 }
 
 .store-button:hover {
@@ -27,7 +47,3 @@
 .other-songs {
     color: azure;
 }
-
-/* .lp {
-    background-color:azure;
-} */

@@ -224,8 +224,10 @@ function generateJsonLd(trackTitle = '') {
                 "@type": "MusicRecording",
                 "name": trackData.title,
                 "url": url,
-                "producer": "Jonas Erixon",
-                "creator": "Jonas Erixon",
+                "producer": {
+                    "@type": "Person",
+                    "name": "Jonas Erixon"
+                },
                 "releasedEvent": [
                     {
                         "@type": "PublicationEvent",
@@ -238,9 +240,25 @@ function generateJsonLd(trackTitle = '') {
                 ],
                 "inAlbum": {
                     "@type": "MusicAlbum",
-                    "albumRelease": trackData.album
+                    "albumRelease": {
+                        "@type": "MusicRelease",
+                        "name": trackData.album || trackData.title,
+                        "musicReleaseFormat": "https://schema.org/DigitalFormat"
+                    },
                 },
-                "genre": "",
+                "recordingOf": {
+                    "@type": "MusicComposition",
+                    "name": trackData.title,
+                    "lyricist": trackData.lyricist,
+                    "lyrics": {
+                        "@type": "CreativeWork",
+                        "text": trackData.lyrics
+                    },
+                    "composer": {
+                        "@type": "Person",
+                        "name": "Jonas Erixon"
+                    },
+                },
                 "image": trackData.image,
                 "sameAs": trackData.stores[0].url
             });
@@ -251,8 +269,10 @@ function generateJsonLd(trackTitle = '') {
                     "@type": "MusicRecording",
                     "name": trackData.title,
                     "url": url,
-                    "producer": "Jonas Erixon",
-                    "creator": "Jonas Erixon",
+                    "producer": {
+                        "@type": "Person",
+                        "name": "Jonas Erixon"
+                    },
                     "releasedEvent": [
                         {
                             "@type": "PublicationEvent",
@@ -265,9 +285,25 @@ function generateJsonLd(trackTitle = '') {
                     ],
                     "inAlbum": {
                         "@type": "MusicAlbum",
-                        "albumRelease": trackData.album
+                        "albumRelease": {
+                            "@type": "MusicRelease",
+                            "name": trackData.album || trackData.title,
+                            "musicReleaseFormat": "https://schema.org/DigitalFormat"
+                        },
                     },
-                    "genre": "",
+                    "recordingOf": {
+                        "@type": "MusicComposition",
+                        "name": trackData.title,
+                        "lyricist": trackData.lyricist,
+                        "lyrics": {
+                            "@type": "CreativeWork",
+                            "text": trackData.lyrics
+                        },
+                        "composer": {
+                            "@type": "Person",
+                            "name": "Jonas Erixon"
+                        },
+                    },
                     "image": trackData.image,
                     "sameAs": trackData.stores[0].url
                 });

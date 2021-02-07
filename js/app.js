@@ -1,22 +1,13 @@
-
-
 $(document).ready(function() {
-    // Always check if we are on the tracks.html and have any title param
-    checkCurrentPage(); 
+    renderContent(); 
 
     $('.track-card picture').click(function() {
         let trackTitle = $(this).parent().attr('data-track-title');
         window.location = 'track.html?title=' + trackTitle;
     });
-
-    // $('.store-button').click(function() {
-    //     let storeUrl = $(this).attr('data-store-url');
-    //     window.location = storeUrl;
-    // });
 });
 
-// https://stackoverflow.com/questions/18673860/defining-a-html-template-to-append-using-jquery/39065147
-function checkCurrentPage() {
+function renderContent() {
     if (window.location.pathname.includes('index.html') || !window.location.pathname.includes('html')) {
         generateJsonLd();
         renderTracklisting();
@@ -212,7 +203,6 @@ function generateJsonLd(trackTitle = '') {
         "name": "A Himitsu"
     };
 
-    // let images = [];
     let tracks = [];
 
     for (key in discography) {
@@ -311,7 +301,6 @@ function generateJsonLd(trackTitle = '') {
         }
     }
 
-    // jsonLd.image = images;
     jsonLd.track = tracks;
 
     var script = document.createElement('script');

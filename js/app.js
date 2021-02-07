@@ -64,6 +64,7 @@ function renderSpecificTrack(trackTitle) {
             const trackData = discography[key];
 
             document.title = 'A Himitsu - ' + trackData.title + ' (' + trackData.year + ')';
+            $('meta[name=description]').attr('content', 'Links to all streaming platforms and stores for ' + trackData.title);
 
             renderSpecificTrackHeader(trackData);
             renderSpecificTrackImage(trackData.image);

@@ -38,30 +38,32 @@
         </nav>
 
         <div class="container" style="max-width: 800px;">
-            <section id="trackHeader" class="row"></section>
-            
-            <hr/>
+            <div itemscope itemtype="https://schema.org/MusicGroup">
+                <section id="trackHeader" class="row"></section>
+                
+                <hr/>
 
-            <section id="currentTrack" class="row">
-                <div class="track-details col-md-6">
-                    <div id="trackInfo"></div>
+                <section id="currentTrack" class="row">
+                    <div class="track-details col-md-6">
+                        <div id="trackInfo"></div>
 
-                    <hr/>
+                        <hr/>
 
-                    <div id="socialMedia" class="row">
-                        
+                        <div id="socialMedia" class="row" itemscope itemtype=”http://schema.org/Organization”>
+                            
+                        </div>
                     </div>
+                </section>
+
+                <hr/>
+
+                <section id="storeButtons" class="row"></section>
+
+                <hr/>
+
+                <div class="other-songs">
+                    <section class="tracks row"></section>
                 </div>
-            </section>
-
-            <hr/>
-
-            <section id="storeButtons" class="row"></section>
-
-            <hr/>
-
-            <div class="other-songs">
-                <section class="tracks row"></section>
             </div>
         </div>
 

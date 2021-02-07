@@ -10,12 +10,23 @@
 
         <script type="application/ld+json">
             {
-            "@context" : "http://schema.org",
-            "@type" : "WebSite",
-            "name" : "A Himitsu",
-            "alternateName" : "A Himitsu",
-            "url" : "https://jonaserixon.github.io/ahimitsu/#/"
-            }
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "url": "https://jonaserixon.github.io/a-himitsu/index.html",
+                "name": "A Himitsu",
+                "logo": {
+                  "url": "https://i1.sndcdn.com/avatars-000511621746-yoogvr-t500x500.jpg",
+                  "width": "512",
+                  "@context": "http://schema.org",
+                  "@type": "ImageObject"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/ahimitsu",
+                  "https://twitter.com/ahimitsu1",
+                  "https://www.instagram.com/a_himitsu/",
+                  "https://www.youtube.com/channel/UCgFwu-j5-xNJml2FtTrrB3A"
+                ]
+              }
         </script>
     </head>
 
@@ -45,12 +56,11 @@
                 </div>
             </div>
         </nav>
-<!-- e4e8ee -->
-<!-- f6f6f6 -->
-        <div class=" container">
+
+        <div class=" container" itemscope itemtype="https://schema.org/MusicGroup">
             <section class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="mt-5">A Himitsu Music</h1>
+                    <h1 class="mt-5" itemprop="name">A Himitsu</h1>
                     <p class="lead">On this site you can find links, information and contact info.</p>
                 </div>
             </section>

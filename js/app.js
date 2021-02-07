@@ -31,14 +31,20 @@ function renderTracklisting() {
     for (key in discography) {
         let trackData = discography[key];
         let template = `
-            <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
+            <div class="track-card col-lg-3" data-track-title="${trackData.url_title}" itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+                <meta itemprop="url" content="https://jonaserixon.github.io/a-himitsu/track.html?title=${trackData.url_title}"/>            
                 <picture>
-                    <img height="300px"class="rounded img-fluid" src="${trackData.image}"/>
+                    <img 
+                        itemprop="image"
+                        height="300px"
+                        class="rounded img-fluid" 
+                        src="${trackData.image}"
+                    />
                 </picture>
 
                 <div class="track-info">
                     <div class="track-title">
-                        <span class="font-weight-normal">${trackData.title}</span>
+                        <span class="font-weight-normal" itemprop="name">${trackData.title}</span>
                     </div>
                     <div class="track-year">
                         <p class="font-weight-light">${trackData.year}</p>
@@ -73,7 +79,6 @@ function renderSpecificTrack(trackTitle) {
                 if (store.url.length > 0) {
                     const template = `
                         <a href="${store.url}" class="store-button border rounded col-md-12">
-                            
                             <span class="lead">${store.name}</span>
                             <i class="fas fa-play" style="float: right;"></i>
                         </a>`;
@@ -95,8 +100,11 @@ function renderSpecificTrack(trackTitle) {
 function renderSpecificTrackHeader(trackData) {
     let html = `
             <div class="col-lg-12 text-center track-details">
-                <h1 class="mt-5">${trackData.title}</h1>
-                <p class="lead">A Himitsu</p>
+                <div itemprop="track" itemscope itemtype="https://schema.org/MusicRecording">
+                    <meta itemprop="url" content="https://jonaserixon.github.io/a-himitsu/track.html?title=${trackData.url_title}"/>            
+                    <h1 class="mt-5" itemprop="name">${trackData.title}</h1>
+                </div>
+                <p class="lead" itemprop="name">A Himitsu</p>
             </div>`;
 
     $(html).appendTo('#trackHeader');
@@ -107,6 +115,7 @@ function renderSpecificTrackImage(imageUrl) {
         <div class="specificTrackImage col-md-6 text-center">
             <picture class="">
                 <img 
+                    itemprop="image"
                     height="300px"
                     class="rounded" 
                     src="${imageUrl}"

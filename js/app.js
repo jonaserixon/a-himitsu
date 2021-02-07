@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 // https://stackoverflow.com/questions/18673860/defining-a-html-template-to-append-using-jquery/39065147
 function checkCurrentPage() {
-    if (window.location.pathname.includes('index.html')) {
+    if (window.location.pathname.includes('index.html') || window.location.pathname.includes('/a-himitsu/')) {
         generateJsonLd();
         renderTracklisting();
     } else if (window.location.pathname.includes('track.html')) {
@@ -309,8 +309,6 @@ function generateJsonLd(trackTitle = '') {
                 });
             }
         }
-
-        
     }
 
     // jsonLd.image = images;

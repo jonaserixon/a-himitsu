@@ -130,6 +130,17 @@ function renderSpecificTrackInfo(trackData) {
             <p><small>${trackData.extra_info}</small></p>
         </div>`;
 
+    if (trackData.title == 'Realms') {
+        html = `
+        <div>
+            <p class="lead">${trackData.title} - ${trackData.release_type.toUpperCase()} (${trackData.year})</p>
+        </div>
+        <div>
+            <p><small>Co-written by A Himitsu, produced and mastered by Hinkik</small></p>
+            <p><small>${trackData.extra_info}</small></p>
+        </div>`;
+    }
+
     $(html).appendTo('#trackInfo');
 }
 

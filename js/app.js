@@ -127,6 +127,7 @@ function renderSpecificTrackInfo(trackData) {
         </div>
         <div>
             <p><small>Written, produced and mastered by A Himitsu</small></p>
+            <p><small>${trackData.extra_info}</small></p>
         </div>`;
 
     $(html).appendTo('#trackInfo');

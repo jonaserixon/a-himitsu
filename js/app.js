@@ -53,8 +53,12 @@ function renderSpecificTrack(trackTitle) {
     for (key in discography) {
         if (discography[key].url_title === trackTitle) {
             const trackData = discography[key];
-
             document.title = 'A Himitsu - ' + trackData.title + ' (' + trackData.year + ')';
+
+            // meta data
+            $('meta[property=og\\:image]').attr('content', trackData.image);
+            $('meta[property=og\\:title]').attr('content', 'A Himitsu - ' + trackData.title);
+            $('meta[property=og\\:description]').attr('content', 'Listen to A Himitsu - ' + trackData.title + ' - ' + trackData.release_type.toUpperCase() + ' ' + trackData.year);
             $('meta[name=description]').attr('content', 'Links to all streaming platforms and stores for ' + trackData.title);
 
             renderSpecificTrackHeader(trackData);

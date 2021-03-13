@@ -11,7 +11,7 @@ let discography = [
         "date": "06-03",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/i-should-let-you-go-feat-nori",
         "stores": [
             {
                 "name": "Spotify",
@@ -65,7 +65,7 @@ let discography = [
         "date": "06-03",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/don-t-cry-feat-nori",
         "stores": [
             {
                 "name": "Spotify",
@@ -119,7 +119,7 @@ let discography = [
         "date": "06-03",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/fragile",
         "stores": [
             {
                 "name": "Spotify",
@@ -172,7 +172,7 @@ let discography = [
         "date": "09-11",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/two-places",
         "stores": [
             {
                 "name": "Spotify",
@@ -225,7 +225,7 @@ let discography = [
         "date": "06-01",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/cosmic-storm",
         "stores": [
             {
                 "name": "Spotify",
@@ -278,7 +278,7 @@ let discography = [
         "date": "02-19",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/realms",
         "stores": [
             {
                 "name": "Spotify",
@@ -330,7 +330,7 @@ let discography = [
         "date": "10-16",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/in-love-feat-nori",
         "stores": [
             {
                 "name": "Spotify",
@@ -384,7 +384,7 @@ let discography = [
         "date": "08-27",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/astray-feat-madi-larson",
         "stores": [
             {
                 "name": "Spotify",
@@ -438,7 +438,7 @@ let discography = [
         "date": "06-28",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/reminisce",
         "stores": [
             {
                 "name": "Spotify",
@@ -491,7 +491,7 @@ let discography = [
         "date": "06-28",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/jorg",
         "stores": [
             {
                 "name": "Spotify",
@@ -542,9 +542,9 @@ let discography = [
         "extra_info": "Track 3 from the 'Reminisce' EP",
         "year": "2016",
         "date": "06-28",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2015",
+        "soundcloud_date": "09-14",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/she-closed-her-eyes-in-despair",
         "stores": [
             {
                 "name": "Spotify",
@@ -597,7 +597,7 @@ let discography = [
         "date": "03-27",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/waiting-just-on-you-feat-nori",
         "stores": [
             {
                 "name": "Spotify",
@@ -651,7 +651,7 @@ let discography = [
         "date": "12-06",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/stories",
         "stores": [
             {
                 "name": "Spotify",
@@ -704,7 +704,7 @@ let discography = [
         "date": "10-20",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/flourish-wither-bye",
         "stores": [
             {
                 "name": "Spotify",
@@ -757,7 +757,7 @@ let discography = [
         "date": "09-04",
         "soundcloud_year": "",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/easier-to-fade-feat-madi-larson",
         "stores": [
             {
                 "name": "Spotify",
@@ -809,9 +809,9 @@ let discography = [
         "extra_info": "Argofox",
         "year": "2015",
         "date": "06-08",
-        "soundcloud_year": "",
+        "soundcloud_year": "2015",
         "soundcloud_date": "",
-        "download_link": "",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/adventures",
         "stores": [
             {
                 "name": "Spotify",
@@ -862,9 +862,9 @@ let discography = [
         "extra_info": "",
         "year": "2015",
         "date": "05-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2015",
+        "soundcloud_date": "05-10",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/a-himitsu-lucid-dream",
         "stores": [
             {
                 "name": "Spotify",
@@ -915,9 +915,9 @@ let discography = [
         "extra_info": "",
         "year": "2015",
         "date": "05-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2015",
+        "soundcloud_date": "04-19",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/cease",
         "stores": [
             {
                 "name": "Spotify",
@@ -968,9 +968,9 @@ let discography = [
         "extra_info": "",
         "year": "2015",
         "date": "05-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2014",
+        "soundcloud_date": "12-29",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/lost-within",
         "stores": [
             {
                 "name": "Spotify",
@@ -1021,9 +1021,9 @@ let discography = [
         "extra_info": "",
         "year": "2015",
         "date": "05-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2014",
+        "soundcloud_date": "11-02",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/icy-vindur",
         "stores": [
             {
                 "name": "Spotify",
@@ -1074,9 +1074,9 @@ let discography = [
         "extra_info": "",
         "year": "2015",
         "date": "05-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2014",
+        "soundcloud_date": "10-09",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/isolated-mind",
         "stores": [
             {
                 "name": "Spotify",
@@ -1127,9 +1127,9 @@ let discography = [
         "extra_info": "",
         "year": "2021",
         "date": "01-29",
-        "soundcloud_year": "",
-        "soundcloud_date": "",
-        "download_link": "",
+        "soundcloud_year": "2014",
+        "soundcloud_date": "09-01",
+        "download_link": "https://www.toneden.io/a-himitsu-2/post/where-silence-is-nonexistent",
         "stores": [
             {
                 "name": "Spotify",

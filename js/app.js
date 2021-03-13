@@ -23,6 +23,13 @@ function renderContent() {
 function renderTracklisting() {
     for (key in discography) {
         let trackData = discography[key];
+
+        let trackYearString = trackData.year;
+
+        if (trackData.soundcloud_year.length > 0 && trackData.year !== trackData.soundcloud_year) {
+            trackYearString += ` (${trackData.soundcloud_year})`;
+        }
+
         let html = `
             <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
                 <picture>
@@ -38,7 +45,7 @@ function renderTracklisting() {
                         <span class="font-weight-normal" itemprop="name">${trackData.title}</span>
                     </div>
                     <div class="track-year">
-                        <p class="font-weight-light">${trackData.year}</p>
+                        <p class="font-weight-light">${trackYearString}</p>
                     </div>
                 </div>
             </div>`;
@@ -68,6 +75,14 @@ function renderSpecificTrack(trackTitle) {
             renderOtherSongs(trackTitle);
 
             const stores = trackData.stores;
+
+            const html = `
+                <a href="${trackData.download_link}" class="store-button border rounded col-md-12">
+                    <span class="lead">Free Download</span>
+                    <i class="fas fa-play" style="float: right;"></i>
+                </a>`;
+
+            $(html).appendTo('#storeButtons');
 
             for (key in stores) {
                 const store = stores[key];

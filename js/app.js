@@ -23,7 +23,7 @@ function renderContent() {
 function renderTracklisting() {
     for (key in discography) {
         let trackData = discography[key];
-        let template = `
+        let html = `
             <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
                 <picture>
                     <img 
@@ -43,7 +43,7 @@ function renderTracklisting() {
                 </div>
             </div>`;
 
-        $(template).appendTo('.tracks');
+        $(html).appendTo('.tracks');
     }
 }
 
@@ -69,13 +69,13 @@ function renderSpecificTrack(trackTitle) {
                 const store = stores[key];
 
                 if (store.url.length > 0) {
-                    const template = `
+                    const html = `
                         <a href="${store.url}" class="store-button border rounded col-md-12">
                             <span class="lead">${store.name}</span>
                             <i class="fas fa-play" style="float: right;"></i>
                         </a>`;
 
-                    $(template).appendTo('#storeButtons');
+                    $(html).appendTo('#storeButtons');
                 }
             }
 
@@ -302,7 +302,10 @@ function generateJsonLd(trackTitle = '') {
     }
 
     jsonLd.track = tracks;
+    createJsonScriptElement(jsonLd);
+}
 
+function createJsonScriptElement(jsonLd) {
     var script = document.createElement('script');
     script.type = "application/ld+json";
     script.innerHTML = JSON.stringify(jsonLd);

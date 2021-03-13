@@ -31,7 +31,7 @@ function renderTracklisting() {
         }
 
         let html = `
-            <div class="track-card col-lg-3" data-track-title="${trackData.url_title}">
+            <div class="track-card col-6 col-md-4 col-lg-3" data-track-title="${trackData.url_title}">
                 <picture>
                     <img 
                         height="300px"
@@ -174,7 +174,7 @@ function renderOtherSongs(trackTitle) {
             const trackData = discography[trackIndex];
 
             const html = `
-                <div class="track-card col-md-4" data-track-title="${trackData.url_title}">
+                <div class="track-card col-4 col-lg-4" data-track-title="${trackData.url_title}">
                     <picture>
                         <img class="rounded img-fluid" src="${trackData.image}"/>
                     </picture>

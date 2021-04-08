@@ -76,13 +76,16 @@ function renderSpecificTrack(trackTitle) {
 
             const stores = trackData.stores;
 
-            const html = `
-                <a href="${trackData.download_link}" class="store-button border rounded col-md-12">
-                    <span class="lead">Free Download</span>
-                    <i class="fas fa-play" style="float: right;"></i>
-                </a>`;
+            if (trackData.download_link.length > 0) {
+                const html = `
+                    <a href="${trackData.download_link}" class="store-button border rounded col-md-12">
+                        <span class="lead">Free Download</span>
+                        <i class="fas fa-play" style="float: right;"></i>
+                    </a>`;
 
-            $(html).appendTo('#storeButtons');
+                $(html).appendTo('#storeButtons');
+            }
+            
 
             for (key in stores) {
                 const store = stores[key];

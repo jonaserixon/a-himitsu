@@ -26,6 +26,22 @@ let discography = [
                 "url": "https://music.apple.com/us/album/i-still-single/1560742630"
             },
             {
+                "name": "Bandcamp",
+                "url": "https://ahimitsu.bandcamp.com/album/i-still"
+            },
+            {
+                "name": "SoundCloud",
+                "url": "https://soundcloud.com/a-himitsu/i-still"
+            },
+            {
+                "name": "YouTube",
+                "url": "https://www.youtube.com/watch?v=5dUbT6zotOU"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/dp/B091D32PDG"
+            },
+            {
                 "name": "Deezer",
                 "url": "https://www.deezer.com/en/album/218787992"
             },
@@ -62,6 +78,22 @@ let discography = [
             {
                 "name": "iTunes",
                 "url": "https://music.apple.com/us/album/i-still-single/1560742630"
+            },
+            {
+                "name": "Bandcamp",
+                "url": "https://ahimitsu.bandcamp.com/album/i-still"
+            },
+            {
+                "name": "SoundCloud",
+                "url": "https://soundcloud.com/a-himitsu/i-still-instrumental"
+            },
+            {
+                "name": "YouTube",
+                "url": "https://www.youtube.com/watch?v=W4Sko7XeExw"
+            },
+            {
+                "name": "Amazon",
+                "url": "https://www.amazon.com/dp/B091D3186B/"
             },
             {
                 "name": "Deezer",

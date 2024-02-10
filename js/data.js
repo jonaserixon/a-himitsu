@@ -3,7 +3,7 @@ let discography = [
     {
         "title": "I Still (feat. Nori)",
         "url_title": "i-still",
-        "image": "https://yt3.ggpht.com/GGjQyjdek40AFy0ckQVTLuzh1OhWOZknLZ0HJldo3VhD8PXDaviGpZ-dF61AF52FfmxCqMYAUjTO6w=s640-nd",
+        "image": "https://i1.sndcdn.com/artworks-9LI6yzK9IuOyKAa1-GId59A-t500x500.jpg",
         "album": "",
         "release_type": "single",
         "extra_info": "",
@@ -57,7 +57,7 @@ let discography = [
     {
         "title": "I Still (Instrumental)",
         "url_title": "i-still-instrumental",
-        "image": "https://yt3.ggpht.com/GGjQyjdek40AFy0ckQVTLuzh1OhWOZknLZ0HJldo3VhD8PXDaviGpZ-dF61AF52FfmxCqMYAUjTO6w=s640-nd",
+        "image": "https://i1.sndcdn.com/artworks-9LI6yzK9IuOyKAa1-GId59A-t500x500.jpg",
         "album": "",
         "release_type": "single",
         "extra_info": "",

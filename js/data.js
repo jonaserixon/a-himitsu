@@ -3,7 +3,7 @@ let discography = [
     {
         "title": "iskall",
         "url_title": "iskall",
-        "image": "",
+        "image": "https://i1.sndcdn.com/artworks-wKAVERNnV9PD7jKM-DSvuUA-t1080x1080.png",
         "album": "",
         "release_type": "single",
         "extra_info": "",

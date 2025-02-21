@@ -1,6 +1,48 @@
 // To avoid CORS issues, just set the JSON object here
 let discography = [
     {
+        "title": "iskall",
+        "url_title": "iskall",
+        "image": "",
+        "album": "",
+        "release_type": "single",
+        "extra_info": "",
+        "year": "2025",
+        "date": "02-21",
+        "soundcloud_year": "",
+        "soundcloud_date": "",
+        "download_link": "",
+        "stores": [
+            {
+                "name": "Spotify",
+                "url": "https://open.spotify.com/track/27DCmU21u68FLJo1GXFrUp?si=88d7054903b542a4"
+            },
+            {
+                "name": "Apple Music",
+                "url": "https://itunes.apple.com/gb/album/id1795045283"
+            },
+            {
+                "name": "iTunes",
+                "url": "https://itunes.apple.com/gb/album/id1795045283?app=itunes"
+            },
+            {
+                "name": "Bandcamp",
+                "url": "https://ahimitsu.bandcamp.com/album/iskall"
+            },
+            {
+                "name": "SoundCloud",
+                "url": "https://soundcloud.com/a-himitsu/iskall"
+            },
+            {
+                "name": "YouTube",
+                "url": "https://www.youtube.com/watch?v=gnn1L0NACaE"
+            }
+        ],
+        "lyrics_formatted": "",
+        "lyrics": "",
+        "lyricist": ""
+    },
+    {
         "title": "I Still (feat. Nori)",
         "url_title": "i-still",
         "image": "https://i1.sndcdn.com/artworks-9LI6yzK9IuOyKAa1-GId59A-t500x500.jpg",

@@ -27,7 +27,7 @@ let discography = [
             },
             {
                 "name": "Bandcamp",
-                "url": "https://ahimitsu.bandcamp.com/album/iskall"
+                "url": "https://ahimitsu.bandcamp.com/track/iskall"
             },
             {
                 "name": "SoundCloud",

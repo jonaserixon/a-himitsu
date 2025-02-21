@@ -35,7 +35,7 @@ let discography = [
             },
             {
                 "name": "YouTube",
-                "url": "https://www.youtube.com/watch?v=gnn1L0NACaE"
+                "url": "https://www.youtube.com/watch?v=g5LzT7giZ4I"
             }
         ],
         "lyrics_formatted": "",

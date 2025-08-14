@@ -1,6 +1,40 @@
 // To avoid CORS issues, just set the JSON object here
 let discography = [
     {
+        "title": "GHOST WHITE",
+        "url_title": "ghost-white",
+        "image": "https://f4.bcbits.com/img/a1460209601_16.jpg",
+        "album": "",
+        "release_type": "single",
+        "extra_info": "featuring Fredrik Thalberg",
+        "year": "2025",
+        "date": "08-14",
+        "soundcloud_year": "",
+        "soundcloud_date": "",
+        "download_link": "",
+        "stores": [
+            {
+                "name": "Spotify",
+                "url": "https://open.spotify.com/track/16yzC1vCz7F3xkU8I6X27x?si=fd010e6a8f84406d"
+            },
+            {
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/album/ghost-white-single/1827266273"
+            },
+            {
+                "name": "Bandcamp",
+                "url": "https://ahimitsu.bandcamp.com/track/ghost-white"
+            },
+            {
+                "name": "SoundCloud",
+                "url": "https://soundcloud.com/a-himitsu/ghost-white"
+            }
+        ],
+        "lyrics_formatted": "",
+        "lyrics": "",
+        "lyricist": ""
+    },
+    {
         "title": "iskall",
         "url_title": "iskall",
         "image": "https://i1.sndcdn.com/artworks-wKAVERNnV9PD7jKM-DSvuUA-t1080x1080.png",

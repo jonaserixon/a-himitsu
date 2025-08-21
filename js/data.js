@@ -1038,7 +1038,7 @@ let discography = [
         "lyricist": ""
     },
     {
-        "title": "Lucid Dreams",
+        "title": "Lucid Dream",
         "url_title": "lucid-dreams",
         "image": "https://i1.sndcdn.com/artworks-000136889530-g2j7my-t500x500.jpg",
         "album": "",

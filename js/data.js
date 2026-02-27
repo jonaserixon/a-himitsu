@@ -1,6 +1,40 @@
 // To avoid CORS issues, just set the JSON object here
 let discography = [
     {
+        "title": "Balcony",
+        "url_title": "balcony",
+        "image": "https://f4.bcbits.com/img/a2643705229_16.jpg",
+        "album": "",
+        "release_type": "single",
+        "extra_info": "with Nori",
+        "year": "2026",
+        "date": "02-27",
+        "soundcloud_year": "",
+        "soundcloud_date": "",
+        "download_link": "",
+        "stores": [
+            {
+                "name": "Spotify",
+                "url": "https://open.spotify.com/track/41dq97GQejTqW9krrl4QnU?si=b626a5f270a44612"
+            },
+            {
+                "name": "Apple Music",
+                "url": "https://music.apple.com/us/song/balcony-with-nori-with-nori/1874971526"
+            },
+            {
+                "name": "Bandcamp",
+                "url": "https://ahimitsu.bandcamp.com/track/balcony"
+            },
+            {
+                "name": "SoundCloud",
+                "url": "https://soundcloud.com/a-himitsu/balcony"
+            }
+        ],
+        "lyrics_formatted": "",
+        "lyrics": "",
+        "lyricist": "Joanna Lin"
+    },
+    {
         "title": "GHOST WHITE",
         "url_title": "ghost-white",
         "image": "https://f4.bcbits.com/img/a1460209601_16.jpg",

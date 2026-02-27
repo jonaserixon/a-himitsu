@@ -23,11 +23,11 @@ let discography = [
             },
             {
                 "name": "Bandcamp",
-                "url": "https://ahimitsu.bandcamp.com/track/balcony"
+                "url": "https://ahimitsu.bandcamp.com/track/balcony-with-nori"
             },
             {
                 "name": "SoundCloud",
-                "url": "https://soundcloud.com/a-himitsu/balcony"
+                "url": "https://soundcloud.com/a-himitsu/balcony-with-nori"
             }
         ],
         "lyrics_formatted": "",

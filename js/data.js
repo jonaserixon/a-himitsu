@@ -1,7 +1,7 @@
 // To avoid CORS issues, just set the JSON object here
 let discography = [
     {
-        "title": "Balcony",
+        "title": "Balcony (with Nori)",
         "url_title": "balcony",
         "image": "https://f4.bcbits.com/img/a2643705229_16.jpg",
         "album": "",
